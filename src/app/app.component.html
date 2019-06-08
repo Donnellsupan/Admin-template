@@ -1,3 +1,7 @@
+<!-- <ng-container *ngIf="!isAuthenticated">
+  <router-outlet></router-outlet>
+</ng-container> -->
+
 <ng-container *ngIf="customLayout; else noCustomLayout">
   <router-outlet></router-outlet>
 </ng-container>
