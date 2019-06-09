@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 import { LoadingPageModule, MaterialBarModule } from 'angular-loading-page';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { LoadingPageModule, MaterialBarModule } from 'angular-loading-page';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
+    FlexLayoutModule,
     LayoutModule.forRoot(adminLteConf),
     LoadingPageModule, MaterialBarModule
   ],
@@ -28,4 +30,4 @@ import { LoadingPageModule, MaterialBarModule } from 'angular-loading-page';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
