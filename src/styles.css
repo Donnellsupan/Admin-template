@@ -1,3 +1,5 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 /* You can add global styles to this file, and also import other style files */
 
 .table-bordered > thead > tr > th,
@@ -7,4 +9,23 @@
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
   border-color: #eae3e3;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+mat-label,
+mat-checkbox,
+mat-form-field,
+mat-radio-button,
+mat-select {
+  font-family: $font-opensans-regular !important;
+  width: 100%;
+  cursor: pointer;
 }

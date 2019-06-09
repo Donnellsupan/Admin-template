@@ -2,14 +2,28 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { MaterialModule } from 'src/vendor';
 
 const routes: Routes = [
   {
     path: '',
     children: [
+      // {
+      //   path: '',
+      //   component: HomeComponent
+      // }, 
       {
         path: '',
-        component: HomeComponent
+        loadChildren: './users/users.module#UsersModule',
+        data: {
+          title: 'Profile'
+        }
+      }, {
+        path: '',
+        loadChildren: './services/services.module#ServicesModule',
+        data: {
+          title: 'Services'
+        }
       }, {
         path: 'accordion',
         loadChildren: './+accordion/accordion.module#AccordionModule',
@@ -137,7 +151,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes), MaterialModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

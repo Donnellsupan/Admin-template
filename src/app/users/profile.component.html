@@ -1,0 +1,42 @@
+<mk-box header="Update Profile" [isCollapsable]="false" [isRemovable]="false" contentClasses="table-responsive">
+  <form autocomplete="off" #f="ngForm">
+    <div fxLayout="row" fxLayoutGap="16px">
+      <mat-form-field fxFlex="50%">
+        <mat-label>First Name</mat-label>
+        <input name="firstName" [(ngModel)]="model.firstName" matInput type="text" emailvalidator required />
+      </mat-form-field>
+      <mat-form-field fxFlex="50%">
+        <mat-label>Last Name</mat-label>
+        <input name="lastName" [(ngModel)]="model.lastName" matInput type="text" emailvalidator required />
+      </mat-form-field>
+    </div>
+    <div fxLayout="row">
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input name="address" [(ngModel)]="model.address" matInput type="text" emailvalidator required />
+      </mat-form-field>
+    </div>
+    <div FxLayout="row" fxLayoutGap="16px">
+      <mat-form-field fxFlex="50%">
+        <mat-label>Email</mat-label>
+        <input name="email" [(ngModel)]="model.email" matInput type="text" emailvalidator required />
+        <mat-error>Invalid email format</mat-error>
+      </mat-form-field>
+      <mat-form-field fxFlex="50%">
+        <mat-label>Plate #</mat-label>
+        <input name="plateNo" [(ngModel)]="model.plateNo" matInput type="text" emailvalidator required />
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutGap="16px">
+      <mat-form-field fxFlex="50%">
+        <mat-label>Password</mat-label>
+        <input name="password" [(ngModel)]="model.password" matInput type="password" required />
+      </mat-form-field>
+      <mat-form-field fxFlex="50%">
+        <mat-label>Confirm Password</mat-label>
+        <input name="confirmPassword" [(ngModel)]="model.confirmPassword" matInput type="password" required />
+      </mat-form-field>
+    </div>
+  </form>
+
+</mk-box>

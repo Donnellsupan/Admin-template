@@ -9,7 +9,9 @@ export const adminLteConf = {
   // isSidebarRightOverContent: true,
   // layout: 'normal',
   sidebarLeftMenu: [
-    {label: 'MAIN NAVIGATION', separator: true},
+    {label: 'DASHBOARD', separator: true},
+    {label: 'Profile', route: 'profile', iconClasses: 'fa fa-user-o'},
+    {label: 'Services', route: 'services', iconClasses: 'fa fa-th'},
     //{label: 'Get Started', route: '/', iconClasses: 'fa fa-road', pullRights: [{text: 'New', classes: 'label pull-right bg-green'}]},
     {label: 'Layout', iconClasses: 'fa fa-th-list', children: [
         {label: 'Configuration', route: 'layout/configuration'},
@@ -19,8 +21,9 @@ export const adminLteConf = {
         {label: 'Sidebar Right', route: 'layout/sidebar-right'},
         {label: 'Content', route: 'layout/content'}
       ]},
-    {label: 'COMPONENTS', separator: true},
-    {label: 'Accordion', route: 'accordion', iconClasses: 'fa fa-tasks'},
+    {label: 'ADMIN', separator: true},
+    {label: 'Services', route: 'services/admin', iconClasses: 'fa fa-th'},
+    {label: 'Users', route: 'users/admin', iconClasses: 'fa fa-users'},
     {label: 'Alert', route: 'alert', iconClasses: 'fa fa-exclamation-triangle'},
     {label: 'Boxs', iconClasses: 'fa fa-files-o', children: [
         {label: 'Default Box', route: 'boxs/box'},
