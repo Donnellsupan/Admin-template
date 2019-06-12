@@ -1,3 +1,95 @@
-<p>
-  user-admin works!
-</p>
+<mk-box header="Customer List" [isCollapsable]="false" [isRemovable]="false" contentClasses="table-responsive">
+  <div fxLayout="row" fxLayoutAlign="end center">
+    <mat-form-field fxFlex="30%">
+      <mat-label>Search</mat-label>
+      <input matInput type="text" name="search" (input)="searchAlert($event.target.value)" />
+    </mat-form-field>
+  </div>
+  
+  <section fxLayout="column">
+    <section class="tbl-container">
+      <table mat-table #table [dataSource]="dataSource" matSort (matSortChange)="sortData($event)" matSortActive="name"
+        matSortDirection="asc" matSortDisableClear>
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef style="width: 120px">
+            Action
+          </th>
+          <td mat-cell *matCellDef="let row" style="width: 120px">
+            <div fxLayout="row">
+              <button mat-icon-button color="primary" matTooltip="Edit" (click)="addEditCustomer(row)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="primary" matTooltip="Delete" (click)="deleteCustomer(row)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+          <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="plateNo">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Plate #</th>
+          <td mat-cell *matCellDef="let element">{{ element.plateNo }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+          <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"
+          [ngClass]="{ hovered: row.hovered, highlighted: row.highlighted }" (mouseover)="row.hovered = true"
+          (mouseout)="row.hovered = false"></tr>
+      </table>
+
+      <div class="pad" *ngIf="dataSource && dataSource.data.length === 0">
+        No record found
+      </div>
+    </section>
+    <section>
+      <app-paging [value]="dataSource"></app-paging>
+    </section>
+  </section>
+
+  <!-- <table class="table table-bordered table-hover">
+    <tbody>
+      <tr>
+        <th>Lastname</th>
+        <th>Fistname</th>
+        <th>Username</th>
+        <th>Plate #</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>Supan</td>
+        <td>Aldrich</td>
+        <td>AS</td>
+        <td>007</td>
+        <td>Active</td>
+      </tr>
+      <tr>
+        <td>1/20/19</td>
+        <td>10/20/19</td>
+        <td>Change Oil</td>
+        <td>Tune up next change oil</td>
+      </tr>
+      
+      
+    </tbody>
+  </table> -->
+</mk-box>

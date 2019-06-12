@@ -25,7 +25,23 @@ mat-checkbox,
 mat-form-field,
 mat-radio-button,
 mat-select {
-  font-family: $font-opensans-regular !important;
+  font-family: "Opensans Regular" !important;
   width: 100%;
   cursor: pointer;
+}
+
+table {
+  width: 100%;
+
+  td, th {
+    white-space: pre-wrap;
+    font-family: "Opensans Regular" !important;
+  }
+}
+
+.table-container {
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  height: calc(100% - 130px);
 }

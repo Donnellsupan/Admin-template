@@ -6,9 +6,11 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { MaterialModule } from "../../vendor";
 import { BoxModule } from "angular-admin-lte";
+import { PagingComponent } from "./paging/paging.component";
 
 @NgModule({
   declarations: [
+    PagingComponent
   ],
   entryComponents: [],
   imports: [
@@ -18,14 +20,14 @@ import { BoxModule } from "angular-admin-lte";
     ReactiveFormsModule,
     MaterialModule
   ],
-  exports: [
-    
+  exports: [    
     CommonModule,
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    BoxModule
+    BoxModule,
+    PagingComponent
   ],
   providers: [
     DatePipe

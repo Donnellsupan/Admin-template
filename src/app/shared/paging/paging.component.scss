@@ -1,0 +1,18 @@
+::ng-deep .mat-select-arrow-wrapper {
+    display: block !important;
+  }
+  
+  mat-paginator-icon {
+    cursor: pointer;
+  }
+  
+  mat-paginator {
+    position: relative;
+    background: transparent;
+  }
+  
+  .padding {
+    margin-left: 20px;
+    align-items: baseline;
+  }
+  

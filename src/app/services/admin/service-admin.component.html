@@ -1,3 +1,65 @@
-<p>
-  service-admin works!
-</p>
+<div class="row">
+  <div class="col-md-3 col-xs-12">
+    <mk-box-small header="44" backgroundColor="red" iconStyleClass="fa fa-calendar">
+      <mk-box-small-content>Schedule/Reservation</mk-box-small-content>
+      <mk-box-small-footer>
+        <a routerLink="/">More info <i class="fa fa-arrow-circle-right"></i></a>
+      </mk-box-small-footer>
+    </mk-box-small>
+  </div>
+
+  <div class="col-md-3 col-xs-12">
+    <mk-box-small header="65" backgroundColor="yellow" iconStyleClass="fa-icon fa fa-thumbs-o-up">
+      <mk-box-small-content>Schedule Approve</mk-box-small-content>
+      <mk-box-small-footer>
+        <a routerLink="/">More info <i class="fa fa-arrow-circle-right"></i></a>
+      </mk-box-small-footer>
+    </mk-box-small>
+  </div>
+
+  <div class="col-md-3 col-xs-12">
+    <mk-box-small header="53%" backgroundColor="green" iconStyleClass="ion ion-stats-bars">
+      <mk-box-small-content>Service Progress</mk-box-small-content>
+      <mk-box-small-footer>
+        <a routerLink="/">More info <i class="fa fa-arrow-circle-right"></i></a>
+      </mk-box-small-footer>
+    </mk-box-small>
+  </div>
+  <div class="col-md-3 col-xs-12">
+    <mk-box-small header="Aug-20" backgroundColor="aqua" iconStyleClass="fa fa-shopping-cart">
+      <mk-box-small-content>Service Target Complete</mk-box-small-content>
+      <mk-box-small-footer>
+        <a routerLink="/">More info <i class="fa fa-arrow-circle-right"></i></a>
+      </mk-box-small-footer>
+    </mk-box-small>
+  </div>
+</div>
+
+
+
+<mk-box header="Service History" [isCollapsable]="false" [isRemovable]="false" contentClasses="table-responsive">
+  <table class="table table-bordered table-hover">
+    <tbody>
+      <tr>
+        <th>Appointment Date</th>
+        <th>Finish Date</th>
+        <th>Service</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>8/20/19</td>
+        <td>8/20/19</td>
+        <td>Tune up</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>1/20/19</td>
+        <td>10/20/19</td>
+        <td>Change Oil</td>
+        <td>Tune up next change oil</td>
+      </tr>
+      
+      
+    </tbody>
+  </table>
+</mk-box>

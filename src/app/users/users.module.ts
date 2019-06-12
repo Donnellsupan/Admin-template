@@ -26,6 +26,6 @@ import { SharedModule } from '../shared';
     
   ],
   declarations: [UserAdminComponent, ProfileComponent],
-  //chemas: [NO_ERRORS_SCHEMA]
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class UsersModule {}
