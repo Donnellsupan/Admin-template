@@ -16,7 +16,6 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from 'src/vendor/material-module';
-import { HomeComponent } from './home/home.component';
 
 @NgModule({
   imports: [
@@ -37,8 +36,7 @@ import { HomeComponent } from './home/home.component';
 
   ],
   declarations: [
-    AppComponent,
-    HomeComponent
+    AppComponent
   ],
   providers:[],
   bootstrap: [AppComponent],

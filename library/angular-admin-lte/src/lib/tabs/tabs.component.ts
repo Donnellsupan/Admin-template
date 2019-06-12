@@ -36,7 +36,7 @@ import { removeListeners, removeSubscriptions } from '../helpers';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TabHeaderComponent {
-  @ViewChild('templateRef', { static: false}) public templateRef: TemplateRef<any>;
+  @ViewChild('templateRef') public templateRef: TemplateRef<any>;
 }
 
 
@@ -49,7 +49,7 @@ export class TabHeaderComponent {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TabContentComponent {
-  @ViewChild('templateRef', { static : false}) public templateRef: TemplateRef<any>;
+  @ViewChild('templateRef') public templateRef: TemplateRef<any>;
 }
 
 /*
@@ -70,10 +70,10 @@ export class TabComponent implements OnInit {
   @Input() public isDisabled: boolean;
   @Input() public tabColor: string;
 
-  @ViewChild('templateRef', { read: true, static: false }) public templateRef: TemplateRef<any>;
+  @ViewChild('templateRef') public templateRef: TemplateRef<any>;
 
-  @ContentChild(TabHeaderComponent, { read: true, static: false }) public tabHeaderComponent: TabHeaderComponent;
-  @ContentChild(TabContentComponent, { read: true, static: false }) public tabContentComponent: TabContentComponent;
+  @ContentChild(TabHeaderComponent) public tabHeaderComponent: TabHeaderComponent;
+  @ContentChild(TabContentComponent) public tabContentComponent: TabContentComponent;
 
   /**
    * @method ngOnInit
@@ -96,7 +96,7 @@ export class TabComponent implements OnInit {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TabsHeaderComponent {
-  @ViewChild('templateRef', { static : false}) public templateRef: TemplateRef<any>;
+  @ViewChild('templateRef') public templateRef: TemplateRef<any>;
 }
 
 /*
@@ -127,7 +127,7 @@ export class TabsComponent implements AfterContentInit, AfterViewInit, OnChanges
   @Output() public onClose = new EventEmitter();
   @Output() public onOpen = new EventEmitter();
 
-  @ContentChild(TabsHeaderComponent, { read: true, static: false }) public tabsHeaderComponent: TabsHeaderComponent;
+  @ContentChild(TabsHeaderComponent) public tabsHeaderComponent: TabsHeaderComponent;
 
   @ContentChildren(TabComponent) public tabs: QueryList<TabComponent>;
 

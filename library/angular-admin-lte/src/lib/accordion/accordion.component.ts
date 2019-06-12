@@ -35,7 +35,7 @@ import { Subscription } from 'rxjs';
   template: '<ng-template #templateRef><ng-content></ng-content></ng-template>'
 })
 export class AccordionHeaderComponent {
-  @ViewChild('templateRef', { read: true, static: false }) public templateRef: TemplateRef<any>;
+  @ViewChild('templateRef') public templateRef: TemplateRef<any>;
 }
 
 
@@ -47,7 +47,7 @@ export class AccordionHeaderComponent {
   template: '<ng-template #templateRef><ng-content></ng-content></ng-template>'
 })
 export class AccordionContentComponent {
-  @ViewChild('templateRef', { static : false}) public templateRef: TemplateRef<any>;
+  @ViewChild('templateRef') public templateRef: TemplateRef<any>;
 }
 
 
@@ -73,10 +73,10 @@ export class AccordionComponent implements OnInit {
   @Input() public headerColorHover: string;
   @Input() public headerStyleClass = 'box-header with-border';
 
-  @ContentChild(AccordionHeaderComponent, { read: true, static: false }) public accordionHeaderComponent: AccordionHeaderComponent;
-  @ContentChild(AccordionContentComponent, { read: true, static: false }) public accordionContentComponent: AccordionContentComponent;
+  @ContentChild(AccordionHeaderComponent) public accordionHeaderComponent: AccordionHeaderComponent;
+  @ContentChild(AccordionContentComponent) public accordionContentComponent: AccordionContentComponent;
 
-  @ViewChild('templateRef', { read: true, static: false }) public templateRef: TemplateRef<any>;
+  @ViewChild('templateRef') public templateRef: TemplateRef<any>;
 
   /**
    * @method ngOnInit
@@ -135,7 +135,7 @@ export class AccordionGroupComponent implements AfterContentInit, AfterViewInit,
     private changeDetectorRef: ChangeDetectorRef,
     private ngZone: NgZone,
     private renderer2: Renderer2
-  ) { }
+  ) {}
 
   /**
    * [headerMouseLeave description]
@@ -234,7 +234,7 @@ export class AccordionGroupComponent implements AfterContentInit, AfterViewInit,
    */
   public collapseStart(event: AnimationEvent, accordion: AccordionComponent): void {
     accordion.isCollapsing = true;
-    this.onCollapseStart.emit({ animationEvent: event, index: accordion.index });
+    this.onCollapseStart.emit({animationEvent: event, index: accordion.index});
   }
 
   /**
@@ -245,7 +245,7 @@ export class AccordionGroupComponent implements AfterContentInit, AfterViewInit,
    */
   public collapseDone(event: AnimationEvent, accordion: AccordionComponent): void {
     accordion.isCollapsing = false;
-    this.onCollapseDone.emit({ animationEvent: event, index: accordion.index });
+    this.onCollapseDone.emit({animationEvent: event, index: accordion.index});
   }
 
   /**

@@ -29,7 +29,7 @@ export class ContentComponent implements OnInit, OnDestroy {
   private navigationEnd: boolean;
   private subscriptions = [];
 
-  @ViewChild('contentInnerElement', { static : false}) private contentInnerElement: ElementRef;
+  @ViewChild('contentInnerElement') private contentInnerElement: ElementRef;
 
   /**
    * @method constructor
