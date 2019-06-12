@@ -38,11 +38,11 @@ export class InputGroupComponent implements AfterContentInit, OnDestroy {
   @Input() label: string;
   @Input() wrapperClasses = 'form-group';
 
-  @ContentChild(InputGroupLabelDirective) public inputGroupLabelDirective: InputGroupLabelDirective;
-  @ContentChild(InputGroupAddonLeftDirective) public inputGroupAddonLeftDirective: InputGroupAddonLeftDirective;
-  @ContentChild(InputGroupAddonRightDirective) public inputGroupAddonRightDirective: InputGroupAddonRightDirective;
-  @ContentChild(InputGroupContentDirective) public inputGroupContentDirective: InputGroupContentDirective;
-  @ContentChild(InputTextDirective) public inputTextDirective: InputTextDirective;
+  @ContentChild(InputGroupLabelDirective, { read: true, static: false }) public inputGroupLabelDirective: InputGroupLabelDirective;
+  @ContentChild(InputGroupAddonLeftDirective, { read: true, static: false }) public inputGroupAddonLeftDirective: InputGroupAddonLeftDirective;
+  @ContentChild(InputGroupAddonRightDirective, { read: true, static: false }) public inputGroupAddonRightDirective: InputGroupAddonRightDirective;
+  @ContentChild(InputGroupContentDirective, { read: true, static: false }) public inputGroupContentDirective: InputGroupContentDirective;
+  @ContentChild(InputTextDirective, { read: true, static: false }) public inputTextDirective: InputTextDirective;
 
   ngAfterContentInit() {
     this.subscriptions.push(this.inputTextDirective.onKeyup.subscribe((value: NgControl) => {
